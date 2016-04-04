@@ -10,16 +10,18 @@
 public class tasteTea extends TeaException {
 
 	/**
+	 * @return 
 	 * 
 	 */
-	
-	
-	public static void  tasteTea(boolean exception) throws TeaException {
+	public static void tasteTea() throws TeaException {
 		// TODO Auto-generated constructor stub
 		if (badTaste = true) {
-			
+			System.out.println("The tea tastes bad.");
 		}
 	}
+	
+	//public static void tasteTea(){	
+	//}
 
 	/**
 	 * @param args
