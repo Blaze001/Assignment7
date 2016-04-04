@@ -1,0 +1,32 @@
+/**
+ * 
+ */
+
+/**
+ * @author Mitchell VanEss
+ *
+ */
+@SuppressWarnings("serial")
+public class tasteTea extends TeaException {
+
+	/**
+	 * 
+	 */
+	
+	
+	public static void  tasteTea(boolean exception) throws TeaException {
+		// TODO Auto-generated constructor stub
+		if (badTaste = true) {
+			
+		}
+	}
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}
