@@ -7,28 +7,60 @@
  *
  */
 @SuppressWarnings("serial")
-public class tasteTea extends TeaException {
-
+public class tasteTea  {
+static Boolean badTaste = true;
+private static tasteTea tester;
 	/**
 	 * @return 
 	 * 
 	 */
-	public static void tasteTea() throws TeaException {
+	public void tasteTea() throws TeaException {
 		// TODO Auto-generated constructor stub
-		if (badTaste = true) {
-			System.out.println("The tea tastes bad.");
+		
+		if (badTaste == false){
+			System.out.println("Setting badTaste to false.");
+			System.out.println("This tea is just right.");
+		}
+		if(badTaste == true){
+		System.out.println("Setting badTaste to true.");	
+		System.out.println("The tea tastes bad.");
+		}
+		}
+		
+	
+	public static void testTea(){
+		try{
+			tester.tasteTea();
+			System.out.println(badTaste);
+		} catch(TeaException e){
+			System.out.println(e.getMessage());
+			e.printStackTrace();
+		}
+		finally {
+			System.out.println("May I have another cup?");
+		}
+		
+		
+	}
+
+	
+	public static boolean trialOne;	
+	
+	public void messageOne() throws TeaException{
+		if(trialOne){
+			throw new TeaException("The tea tastes bad.");
 		}
 	}
-	
-	//public static void tasteTea(){	
-	//}
 
 	/**
 	 * @param args
 	 */
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-
+		tester = new tasteTea();
+ badTaste = true;
+ 
+testTea();
 	}
 
 }
