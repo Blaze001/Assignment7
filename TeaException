@@ -8,50 +8,13 @@
  */
 @SuppressWarnings("serial")
 public class TeaException extends Exception {
-
-	static Boolean badTaste = false;
-	
-	/**
-	 * @return the badTaste
-	 */
-	public Boolean isBadTaste() {
-		return badTaste;
-	}
-
-
-
-	/**
-	 * @param badTaste the badTaste to set
-	 */
-	public void setBadTaste(Boolean badTaste) {
-		this.badTaste = badTaste;
-		
-	}
-
-
-
 	/**
 	 * 
 	 */
-	public TeaException() {
+	public TeaException(String message) {
 		// TODO Auto-generated constructor stub
-		if (badTaste = false){
-			System.out.println("Setting badTaste to false.");
-		}
-		if(badTaste = true){
-		System.out.println("Setting badTaste to true.");	
-		}
-	}
-
-
-
-//public static void testTea(){
-	//try{
-	//	tasteTea()
 		
-	//}	
-	
-//}
+	}
 
 	/**
 	 * @param args
