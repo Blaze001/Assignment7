@@ -9,6 +9,7 @@
 public class tasteTea  {
 static Boolean badTaste = false;
 private static tasteTea tester;
+
 	/**
 	 * @return 
 	 * 
@@ -21,8 +22,9 @@ private static tasteTea tester;
 			System.out.println("Setting badTaste to false.");
 		}
 		if(badTaste == true){
-			System.out.println("The tea tastes bad.");
-			System.out.println("Setting badTaste to true.");	
+			
+			System.out.println("Setting badTaste to true.");
+			throw new TeaException("The tea tastes bad.");
 		}
 		}
 		
@@ -30,11 +32,10 @@ private static tasteTea tester;
 	public static void testTea(){
 		try{
 			tester.tasteTea();
-//		} catch(TestTea e){
+
 			
 		} catch(TeaException e){
-			System.out.println(e.getMessage());
-			System.out.println(e);
+			System.err.println(e.getMessage());
 			e.printStackTrace();
 		}
 		finally {
@@ -44,16 +45,6 @@ private static tasteTea tester;
 	}
 
 	
-//	public static boolean trialOne;	
-//	
-//	public void messageOne(boolean exception) throws TeaException{
-//		if(trialOne){
-//			throw new TestTea("The tea tastes bad.");
-//		}
-//		if(exception){
-//		
-//		}
-//	}
 
 	/**
 	 * @param args
