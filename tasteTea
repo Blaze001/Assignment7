@@ -6,9 +6,8 @@
  * @author Mitchell VanEss
  *
  */
-@SuppressWarnings("serial")
 public class tasteTea  {
-static Boolean badTaste = true;
+static Boolean badTaste = false;
 private static tasteTea tester;
 	/**
 	 * @return 
@@ -18,12 +17,12 @@ private static tasteTea tester;
 		// TODO Auto-generated constructor stub
 		
 		if (badTaste == false){
-			System.out.println("Setting badTaste to false.");
 			System.out.println("This tea is just right.");
+			System.out.println("Setting badTaste to false.");
 		}
 		if(badTaste == true){
-		System.out.println("Setting badTaste to true.");	
-		System.out.println("The tea tastes bad.");
+			System.out.println("The tea tastes bad.");
+			System.out.println("Setting badTaste to true.");	
 		}
 		}
 		
@@ -31,26 +30,30 @@ private static tasteTea tester;
 	public static void testTea(){
 		try{
 			tester.tasteTea();
-			System.out.println(badTaste);
+//		} catch(TestTea e){
+			
 		} catch(TeaException e){
 			System.out.println(e.getMessage());
+			System.out.println(e);
 			e.printStackTrace();
 		}
 		finally {
 			System.out.println("May I have another cup?");
 		}
 		
-		
 	}
 
 	
-	public static boolean trialOne;	
-	
-	public void messageOne() throws TeaException{
-		if(trialOne){
-			throw new TeaException("The tea tastes bad.");
-		}
-	}
+//	public static boolean trialOne;	
+//	
+//	public void messageOne(boolean exception) throws TeaException{
+//		if(trialOne){
+//			throw new TestTea("The tea tastes bad.");
+//		}
+//		if(exception){
+//		
+//		}
+//	}
 
 	/**
 	 * @param args
@@ -58,8 +61,7 @@ private static tasteTea tester;
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		tester = new tasteTea();
- badTaste = true;
- 
+ badTaste = false;
 testTea();
 	}
 
