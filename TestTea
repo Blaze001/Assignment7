@@ -28,37 +28,6 @@ public class TestTea {
 	}
 
 	/**
-	 * 
-	 */
-	public TestTea() {
-		// TODO Auto-generated constructor stub
-		//super();
-	}
-	
-//	/**
-//	 * @param message
-//	 */
-//	public TestTea(String message) {
-//		// TODO Auto-generated constructor stub
-//		super(message);
-//	}
-//	/**
-//	 * @param sourceException
-//	 */
-//	public TestTea(Throwable sourceException) {
-//		// TODO Auto-generated constructor stub
-//		super(sourceException);
-//	}
-//	/**
-//	 * @param message
-//	 * @param sourceExecption
-//	 */
-//	public TestTea(String message, Throwable sourceException) {
-//		// TODO Auto-generated constructor stub
-//		super(message, sourceException);
-//	}
-//	
-	/**
 	 * @param args
 	 */
 	public static void main(String[] args) {
