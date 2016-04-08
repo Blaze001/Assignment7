@@ -9,14 +9,16 @@
 public class tasteTea  {
 static Boolean badTaste = false;
 private static tasteTea tester;
-
+static int temperature = 149;
 	/**
 	 * @return 
 	 * 
 	 */
 	public void tasteTea() throws TeaException {
 		// TODO Auto-generated constructor stub
-		
+		if(temperature > 150){
+			System.out.println("Setting the temperature to " + temperature + " .");
+		}
 		if (badTaste == false){
 			System.out.println("This tea is just right.");
 			System.out.println("Setting badTaste to false.");
@@ -26,15 +28,17 @@ private static tasteTea tester;
 			System.out.println("Setting badTaste to true.");
 			throw new TeaException("The tea tastes bad.");
 		}
+		
 		}
 		
 	
 	public static void testTea(){
 		try{
 			tester.tasteTea();
-
-			
 		} catch(TeaException e){
+			System.err.println(e.getMessage());
+			e.printStackTrace();
+		}catch(TeaTooHotException, e){
 			System.err.println(e.getMessage());
 			e.printStackTrace();
 		}
@@ -52,7 +56,12 @@ private static tasteTea tester;
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		tester = new tasteTea();
- badTaste = false;
+
+ temperature = 180;
+testTea();
+temperature = 149;
+testTea();
+badTaste = false;
 testTea();
 	}
 
