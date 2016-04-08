@@ -9,37 +9,46 @@
 public class tasteTea  {
 static Boolean badTaste = false;
 private static tasteTea tester;
-
+static int temperature = 149;
 	/**
 	 * @return 
 	 * 
 	 */
 	public void tasteTea() throws TeaException {
 		// TODO Auto-generated constructor stub
-		
+		if(temperature > 150){	
+			System.err.println("Setting the temperature to " + temperature + " .");
+			throw new TeaTooHotException("The tea is too hot!");
+		}
+//		if(temperature == 149){
+//			System.err.println("Setting the temperature to " + temperature + " .");
+//			throw new TeaTooHotException("The tea is just right.");
+//		}
 		if (badTaste == false){
-			System.out.println("This tea is just right.");
-			System.out.println("Setting badTaste to false.");
+			System.err.println("Setting badTaste to false.");
+			System.err.println("This tea is just right.");
+			
 		}
 		if(badTaste == true){
-			
-			System.out.println("Setting badTaste to true.");
+			System.err.println("Setting badTaste to true.");
 			throw new TeaException("The tea tastes bad.");
 		}
+		
 		}
 		
 	
 	public static void testTea(){
 		try{
 			tester.tasteTea();
-
-			
+		}catch(TeaTooHotException e){
+			System.err.println(e.getMessage());
+			e.printStackTrace();
 		} catch(TeaException e){
 			System.err.println(e.getMessage());
 			e.printStackTrace();
 		}
 		finally {
-			System.out.println("May I have another cup?");
+			System.err.println("May I have another cup?");
 		}
 		
 	}
@@ -51,8 +60,21 @@ private static tasteTea tester;
 	 */
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		tester = new tasteTea();
- badTaste = false;
+tester = new tasteTea();
+
+//badTaste = false;
+//testTea();
+
+badTaste = true;
+testTea();
+
+temperature = 155;
+testTea();
+
+temperature = 149;
+testTea();
+
+badTaste = false;
 testTea();
 	}
 
